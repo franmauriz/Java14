@@ -69,12 +69,70 @@ public class JavaBasico {
         System.out.println("valor minimo tipo long:" + Long.MIN_VALUE);
         System.out.println("valor maximo tipo long:" + Long.MAX_VALUE);
         
+        float floatVar=100.0F;
+        System.out.println("floatVar = " + floatVar);
+        System.out.println("bits tipo float: " + Float.SIZE);
+        System.out.println("bytes tipo float:" + Float.BYTES);
+        System.out.println("valor minimo tipo float:" + Float.MIN_VALUE);
+        System.out.println("valor maximo tipo float:" + Float.MAX_VALUE);
+        
+        double doubleVar = 300.0D;
+        System.out.println("doubleVar = " + doubleVar);
+        System.out.println("bits tipo doudle: " + Double.SIZE);
+        System.out.println("bytes tipo double:" + Double.BYTES);
+        System.out.println("valor minimo tipo double:" + Double.MIN_VALUE);
+        System.out.println("valor maximo tipo double:" + Double.MAX_VALUE);
+        
+        System.out.println("bits tipo char: " + Character.SIZE);
+        System.out.println("bytes tipo char:" + Character.BYTES);
+        System.out.println("valor minimo tipo char:" + Character.MIN_VALUE);
+        System.out.println("valor maximo tipo char:" + Character.MAX_VALUE);
+        
+        char varChar = 'a';
+        System.out.println("varChar = " + varChar);
+        
+        char varCharExclamacion = '\u0021'; // tambien e puede usar var
+        System.out.println("varCharExclamacion = " + varCharExclamacion);
+        
+        char varCharExclamacionDecimal = 33; // no se puede usar var por que se convertiria en decimal
+        System.out.println("varCharExclamacionDecimal = " + varCharExclamacionDecimal);
+        
+        char varCharExclamacionSimbolo = '!'; // se puede usar var
+        System.out.println("varCharExclamacionSimbolo = " + varCharExclamacionSimbolo);
+        
+        
         var numeroInt =127234;
         System.out.println("numero = " + numeroInt);
         var numeroLong=9223372036854775807L;
         System.out.println("numeroLong = " + numeroLong);
         
+        /*Numero en otras bases numericas */
         
-
+        int numeroDecimal = 10; // tambien se puede definir con la palabra var
+        System.out.println("numeroDecimal = " + numeroDecimal);
+        
+        int numeroOctal = 012; // tambien se puede definir con la palabra var
+        System.out.println("numeroOctal = " + numeroOctal);
+        
+        int numeroBinario = 0b1010; // tambien se puede definir con la palabra var
+        System.out.println("numeroBinario = " + numeroBinario);
+        
+        int numeroHexadecimal = 0xA; // tambien se puede definir con la palabra var
+        System.out.println("numeroHexadecimal = " + numeroHexadecimal);
+        
+        /* TIPO PRIMITIVO BOOLEAN*/
+        System.out.println("true tipo boolean " + Boolean.TRUE);
+        System.out.println("false tipo boolean " + Boolean.FALSE);
+        
+        boolean booleanVar = true;
+        if(booleanVar){
+            System.out.println("el valor es verdadero");
+        }else{
+            System.out.println("el valor es falso");
+        }
+        
+        var edadVar = 18;
+        var adulto = edadVar >=18;
+        System.out.println("adulto = " + adulto);
     }
 }
