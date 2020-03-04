@@ -134,5 +134,67 @@ public class JavaBasico {
         var edadVar = 18;
         var adulto = edadVar >=18;
         System.out.println("adulto = " + adulto);
+        
+        
+        /* CONVERSION DE TIPOS PRIMITIVOS */
+        var edadConversion= Integer.parseInt("20");
+        
+        System.out.println("edadConversion = " + edadConversion);
+        
+        double valorPi = Double.parseDouble("3.1416");
+        System.out.println("valorPi = " + valorPi);
+        
+        char c = "Hola".charAt(0); // chartAt nos devuelve el caracter segun la posicion indicada
+        System.out.println("c = " + c);
+        
+        Scanner scannerDos = new Scanner(System.in);
+        int edadScanner = Integer.parseInt(scannerDos.nextLine());
+        System.out.println("edadScanner = " + edadScanner);
+        
+        char caracterScanner = scannerDos.nextLine().charAt(0);
+        System.out.println("caracterScanner = " + caracterScanner);
+        
+        String edadTexto = String.valueOf(25);
+        System.out.println("edadTexto = " + edadTexto);
+        
+        short s = 10;
+        byte b = (byte) s;  //casting
+        
+        /* OPERADORES EN JAVA */
+        int aa=2, bb=2;
+        /* Suma */
+        int resultados = aa + bb;
+        System.out.println("resultados suma = " + resultados);
+        System.out.println("resultados suma= " + (aa+bb));
+        
+        /* Resta */
+        resultados = aa - bb;
+        System.out.println("resultados resta= " + resultados);
+        System.out.println("resultados resta= " + (aa-bb));
+        
+        /* multiplicacion */
+        resultados = aa * bb;
+        System.out.println("resultados multiplicacion = " + resultados);
+        System.out.println("resultados multiplicacion= " + (aa*bb));
+        
+        /* division */
+        var resultado2 = (float) aa / bb;
+        System.out.println("resultados division= " + resultados);
+        System.out.println("resultados division= " + (aa/bb));
+        
+        /* operador de modulo */
+        resultados = aa % bb;
+        System.out.println("resultados modulo= " + resultados);
+        System.out.println("resultados modulo= " + (aa%bb));
+        
+        /* ¿Es par?*/
+        resultados = aa % 2;
+        if(resultados == 0){
+            System.out.println(aa + " es par");
+        }else{
+            System.out.println(aa + " no es par");
+        }
+        
+        /* OPERADORES LOGICOS */
     }
 }
