@@ -195,6 +195,51 @@ public class JavaBasico {
             System.out.println(aa + " no es par");
         }
         
-        /* OPERADORES LOGICOS */
+        /* OPERADORES ASIGNACION */
+        int f = 3, m =2;
+        int p = f;
+        System.out.println("p = " + p);
+        
+        f += 1; // a = a +1;
+        System.out.println("f = " + f);
+        
+        f+=10;        
+        System.out.println("f = " + f);
+        
+        f-= 2;
+        System.out.println("f = " + f);
+        
+        // *= , /= , %=
+        
+        /* OPERADORES UNARIOS*/
+        int o = 3;
+        int i = -o;
+        System.out.println("i = " + i);
+        
+        boolean d= true;
+        boolean g= !d;
+        System.out.println("g = " + g);
+        
+        int y =3;
+        int u=++y;
+        System.out.println("y = " + y);
+        System.out.println("u = " + u);
+        
+        int j = 5;
+        int w =j++;
+        System.out.println("j = " + j);
+        System.out.println("w = " + w);
+        //decremento
+        //predecremento
+        /*  int j =2;   1
+            int h = --j; 1
+        */
+        //postdecremento
+        /*  int j =2; 1
+            int h = j--; 2
+        */
+        
+        
+        
     }
 }
