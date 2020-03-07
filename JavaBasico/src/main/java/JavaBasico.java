@@ -295,5 +295,46 @@ public class JavaBasico {
 
         }
         System.out.println("textoNumero = " + textoNumero);
+        
+        /* ITERACIONES */
+        int contadorCiclo=0;
+        
+        while(contadorCiclo <10){
+            System.out.println("contadorCiclo = " + contadorCiclo);
+            contadorCiclo++;
+        }
+        contadorCiclo=0;
+        while(contadorCiclo <10){
+            if(contadorCiclo % 2 == 0){
+                System.out.println("contadorCiclo = " + contadorCiclo);
+            }
+            contadorCiclo++;
+        }
+        contadorCiclo=0;
+        while(contadorCiclo<10){
+            if(contadorCiclo % 2 != 0){
+                continue;
+            }
+            System.out.println("contadorCiclo = " + contadorCiclo);
+            contadorCiclo++;
+        }
+        contadorCiclo=0;
+        while(contadorCiclo <10){
+            if(contadorCiclo % 2 == 0){
+                System.out.println("contadorCiclo = " + contadorCiclo);
+                break;
+            }
+            contadorCiclo++;
+        }
+        contadorCiclo=0;
+        do{
+            System.out.println("contadorCiclo = " + contadorCiclo);
+            contadorCiclo++;
+        }while(contadorCiclo<10);
+        
+        for(contadorCiclo=0;contadorCiclo<10;contadorCiclo++){
+            System.out.println("contadorCiclo = " + contadorCiclo);
+        }
+        
     }
 }
