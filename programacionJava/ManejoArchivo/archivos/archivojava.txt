@@ -1,0 +1,6 @@
+este es la primera linea del fichero
+
+Fin de escritura
+Esta es una linea anexada
+
+fin de anexo
