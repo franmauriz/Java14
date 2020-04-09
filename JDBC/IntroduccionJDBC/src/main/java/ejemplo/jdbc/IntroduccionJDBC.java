@@ -6,14 +6,16 @@ public class IntroduccionJDBC {
     public static void main(String[] args) {
         // 1º paso. crear la cadena de conexion a mysql
         String url = "jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=UTC";
+        String user ="absol";
+        String pass ="frandaniel10";
         
         try {
             // 2º paso. crear el obejto de conexion a mysql
-            Connection conexion = DriverManager.getConnection(url, "ptl28sev000", "frandaniel10");
+            Connection conexion = DriverManager.getConnection(url, user, pass);
             // 3º paso . crear el statament
             Statement instrucciones = conexion.createStatement();
             // 4º paso crear la query
-            String sql = "select id_persona,nombre,apellido,email,telefono from persona";
+            String sql = "select id_personas,nombre,apellido,email,telefono from personas";
             // 5º paso ejecutar query
             ResultSet resultado = instrucciones.executeQuery(sql);
             // 6º paso, procesamos resultado
