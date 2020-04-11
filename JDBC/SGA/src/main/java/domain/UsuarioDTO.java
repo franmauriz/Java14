@@ -1,6 +1,6 @@
 package domain;
 
-public class Usuario {
+public class UsuarioDTO {
     private int id_usuario;
     private String usuario;
     private String password;

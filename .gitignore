@@ -34,3 +34,6 @@
 /JDBC/ManejoJDBC/target/
 /JDBC/SGA/target/
 /JDBC/ManejoJDBC_trasacciones/target/
+/JDBC/ManejoJDBC_trasacciones_DAO_DTO/target/
+/JDBC/ManejoJDBC_Pool_Conexion/target/
+/Servlets_JSPs/HolaMundo_JavaWeb/target/
