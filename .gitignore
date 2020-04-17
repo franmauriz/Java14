@@ -42,3 +42,6 @@
 /Servlets_JSPs/CabecerosHttp/target/
 /Servlets_JSPs/ManejoCookie/target/
 /Servlets_JSPs/CookiesContador/target/
+/Servlets_JSPs/ManejoSessionServlet/target/
+/Servlets_JSPs/CarritoSession/target/
+/JSPs/HolaMundoJSP/target/
