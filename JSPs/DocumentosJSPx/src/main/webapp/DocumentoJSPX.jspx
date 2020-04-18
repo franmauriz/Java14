@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+
+    <jsp:declaration>
+        private int contador=1;
+    </jsp:declaration>
+    <body>
+        <h1>Documento JSPx</h1>
+        <!-- SAlida de texto directamente -->
+        <jsp:text>Ejemplos de JSPX</jsp:text>
+        <br/>
+        <!-- Expresiones jsp, se escriben directamente a la pagina-->
+        <jsp:expression>
+            2*6
+        </jsp:expression>
+        <br/>
+        <jsp:scriptlet>
+            String nombre = request.getContextPath();
+        </jsp:scriptlet>
+        Nombre de la pagina: <jsp:expression>nombre</jsp:expression>
+        <br/>
+        visitas:<jsp:expression>this.contador++</jsp:expression>
+    </body>
+
+</jsp:root>
