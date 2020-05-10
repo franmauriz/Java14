@@ -57,3 +57,12 @@
 /MVC/ManejoMVC/target/
 /MVC/ManejoMVC2/target/
 /MVC/ControlCliente/target/
+/JSF/HolaMundoJSF/target/
+/JSF/ManagedBeansJSF/target/
+/JSF/ManagedBackingBeans/target/
+/JSF/ManagedBackingBeansLiveCycle/target/
+/JSF/ManagedBackingBeansLiveCycle_Validadores/target/
+/JSF/BolsaTrabajoConvertidores/target/
+/JSF/BolsaTrabajoConvertidoresInternalizacion/target/
+/JSF/BolsaTrabajoListener/target/
+/JSF/BolsaTrabajoActionListener/target/
