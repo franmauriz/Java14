@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Bolsa Trabajo</title>
+    </h:head>
+    <h:body>
+
+        <ui:composition template="./WEB-INF/plantillas/plantilla.xhtml">
+            <ui:define name="content">
+                <h:form id="vacanteForm">
+                    <h:messages globalOnly="true"></h:messages>
+                    <table>
+                        <tr>
+                            <td>
+                                <h:outputLabel for="nombre" value="#{msgs['vacanteForm.nombre']}" />
+                            </td>
+                            <td>
+                                <h:inputText required="true" id="nombre" value="#{candidato.nombre}"/>
+                            </td>
+                            <td><h:message for="nombre"></h:message></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:outputLabel for="apellido" value="#{msgs['vacanteForm.apellido']}" />
+                            </td>
+                            <td>
+                                <h:inputText required="true" id="apellido" value="#{candidato.apellido}"/>
+                            </td>
+                            <td><h:message for="apellido"></h:message></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:outputLabel for="sueldo" value="#{msgs['vacanteForm.sueldo']}" />
+                            </td>
+                            <td>
+                                <h:inputText id="sueldo" value="#{candidato.sueldo}">
+                                    <f:validateLongRange minimum="500" maximum="5000"/>
+                                </h:inputText>
+                            </td>
+                            <td><h:message for="sueldo"></h:message></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:outputLabel for="fechanacimiento" value="#{msgs['vacanteForm.nacimiento']}" />
+                            </td>
+                            <td>
+                                <h:inputText required="true" id="fechanacimiento" value="#{candidato.fechaNacimiento}">
+                                    <f:convertDateTime pattern="dd/MM/yyyy"/> 
+                                </h:inputText>
+                            </td>
+                            <td><h:message for="fechanacimiento"></h:message></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:outputLabel for="codigopostal" value="#{msgs['vacanteForm.codigopostal']}" />
+                            </td>
+                            <td>
+                                <h:inputText immediate="true" onchange="this.form.submit()" 
+                                             valueChangeListener="#{vacanteForm.codigoPostalListener}" 
+                                             required="true" id="codigopostal" value="#{candidato.codigopostal}">
+                                    <f:convertNumber integerOnly="true" pattern="00000" />
+                                </h:inputText>
+                            </td>
+                            <td><h:message for="codigopostal"></h:message></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:outputLabel for="provinciaid" value="#{msgs['vacanteForm.provinciaid']}" />
+                            </td>
+                            <td>
+                                <h:selectOneMenu id="provinciaid" required="true" value="#{candidato.provinciaId}">
+                                    <f:selectItem itemValue="" itemLabel="#{msgs['vacanteForm.seleccionar']}"/>
+                                    <f:selectItems value="#{provinciaHelper.selectItems}" />
+                                </h:selectOneMenu>
+                            </td>
+                            <td><h:message for="provinciaid"></h:message></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h:outputLabel for="municipio" value="#{msgs['vacanteForm.municipio']}" />
+                            </td>
+                            <td>
+                                <h:inputText required="true" id="municipio" value="#{candidato.municipio}"/>
+                            </td>
+                            <td><h:message for="municipio"></h:message></td>
+                        </tr>
+                    </table>
+                    <tbale>
+                        <tr>
+                            <td>
+                                <h:commandLink actionListener="#{vacanteForm.ocultarComentario}" immediate="true"
+                                               rendered="#{!vacanteForm.comentarioEnviado}" value="#{msgs['vacanteForm.mostrar']}"/>
+                                <h:commandLink actionListener="#{vacanteForm.ocultarComentario}" immediate="true"
+                                               rendered="#{vacanteForm.comentarioEnviado}" value="#{msgs['vacanteForm.ocultar']}"/>                     
+                            </td>
+                        </tr>
+                    </tbale>
+                    <h:panelGroup rendered="#{vacanteForm.comentarioEnviado}">
+                        <table>
+                            <tr>
+                                <td>
+                                    <h:outputLabel for="comentario" value="#{msgs['vacanteForm.comentario']}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h:inputTextarea id="comentario" cols="50" rows="10" value="#{candidato.comentario}">
+
+                                    </h:inputTextarea>
+                                </td>
+                            </tr>
+                        </table>
+                    </h:panelGroup>
+                    <br/>
+                    <h:commandButton action="#{vacanteForm.enviar()}" value="#{msgs['vacanteForm.enviar']}"/>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
