@@ -48,8 +48,57 @@ public class PruebaJPQL {
             String nombre = (String) tupla[0];
             String apellido = (String) tupla[1];
             String email = (String) tupla[2];
-            log.debug("nombre: " + nombre + " apellido: " + apellido + " email: " + email);            
+            //log.debug("nombre: " + nombre + " apellido: " + apellido + " email: " + email);            
         }
+        
+        jpql="select max(p.idPersona) ,min(p.idPersona), count(p.idPersona) from Persona p";
+        iter= em.createQuery(jpql).getResultList().iterator();
+        while(iter.hasNext()){
+            tupla = (Object[]) iter.next();
+            Integer maxId= (Integer) tupla[0];
+            Integer minId= (Integer) tupla[1];
+            Long contador = (Long) tupla[2];
+            //log.debug("maxId: " + maxId + ", minId: " + minId + ", contador: " + contador);
+        }
+        
+        
+        jpql="select count(distinct p.nombre) from Persona p";
+        Long contador = (Long) em.createQuery(jpql).getSingleResult();
+        log.debug("contador: " + contador);
+        
+        jpql="select CONCAT(p.nombre,' ',p.apellido) as Nombre from Persona p";
+        nombres=em.createQuery(jpql).getResultList();
+        for(String nombre: nombres){
+            //log.debug("Nombre: " + nombre.toUpperCase());
+        }
+        
+        
+        int id=1;
+        jpql="select p from Persona p where p.idPersona = :id";
+        q=em.createQuery(jpql);
+        q.setParameter("id", id);
+        persona=(Persona) q.getSingleResult();
+        //log.debug("Persona: " + persona);
+        
+        jpql = "select p from Persona p where upper(p.nombre) like upper(:letra) order by p.nombre";
+        String letra="%a%";
+        q = em.createQuery(jpql);
+        q.setParameter("letra", letra);
+        personas= q.getResultList();
+        //mostrarConsulta(personas);
+        
+        jpql="select p from Persona p where p.idPersona in (select min(p1.idPersona) from Persona p1)";
+        personas=em.createQuery(jpql).getResultList();
+        //mostrarConsulta(personas);
+        
+        jpql = "select u from Usuario u join u.persona p";
+        usuarios = em.createQuery(jpql).getResultList();
+        //mostrarUsuarios(usuarios);
+        
+        jpql = "select u from Usuario u left join fetch u.persona p";
+        usuarios = em.createQuery(jpql).getResultList();
+        mostrarUsuarios(usuarios);
+        
         
 
         em.close();
@@ -59,6 +108,12 @@ public class PruebaJPQL {
         for (Persona persona : personas) {
             log.debug("persona: " + persona);
         }
+    }
+
+    private static void mostrarUsuarios(List<Usuario> usuarios) {
+        for (Usuario  u: usuarios) {
+            log.debug("Usuarios: " + u);
+        }    
     }
 
 }
